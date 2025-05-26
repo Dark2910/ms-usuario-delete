@@ -1,6 +1,7 @@
 package com.eespindola.ms.delete.controller;
 
 import com.eespindola.ms.delete.dao.UsuarioDAO;
+import com.eespindola.ms.delete.utils.Constantes;
 import com.eespindola.ms.delete.utils.Result;
 import com.eespindola.ms.delete.jpa.UsuarioRepository;
 import com.eespindola.ms.delete.models.UsuarioML;
@@ -51,13 +52,14 @@ public class UsuarioRestController {
     public UsuarioML GetByFolio(@PathVariable String folioId){
         RestTemplate restTemplate = new RestTemplate();
 
-        String endpoint = MessageFormat.format("http://localhost:8082/usuarioAPI/{0}", folioId);
+//        String endpoint = MessageFormat.format("http://localhost:8082/usuarioAPI/{0}", folioId);
+        String endpoint = String.format(Constantes.GET_BY_FOLIO, folioId);
 
         ResponseEntity<Result<UsuarioML>> response = restTemplate.exchange(
                 endpoint,
                 HttpMethod.POST,
                 HttpEntity.EMPTY,
-                new ParameterizedTypeReference<Result<UsuarioML>>() {
+                new ParameterizedTypeReference<>() {
                 }
         );
         Result result = response.getBody();
