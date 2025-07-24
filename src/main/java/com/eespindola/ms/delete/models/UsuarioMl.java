@@ -1,12 +1,14 @@
 package com.eespindola.ms.delete.models;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class UsuarioML {
+@NoArgsConstructor
+public class UsuarioMl {
 
     private int idUsuario;
-    private String folio;
+    private String folioId;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
