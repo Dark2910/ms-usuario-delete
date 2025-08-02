@@ -1,5 +1,6 @@
 package com.eespindola.ms.delete.models.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.EqualsAndHashCode;
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 //@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result <T> extends Folio{
 
     @JsonProperty("isCorrect")

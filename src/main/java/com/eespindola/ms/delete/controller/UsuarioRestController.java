@@ -14,13 +14,15 @@ public class UsuarioRestController {
     @Autowired
     public UsuarioRestController(
             UsuarioService service
-    ){
+    ) {
         this.usuarioService = service;
     }
 
     @PostMapping("/delete/{folioId}")
-    public Result<Void> delete(@RequestHeader(value = "folioRequest", required = false) String folioRequest, @PathVariable String folioId){
-//        folioRequest = (folioRequest == null || folioRequest.isEmpty() || folioRequest.isBlank())? FolioUtils.CrearFolioRequest() : folioRequest;
+    public Result<Void> usuarioDelete(
+            @RequestHeader(value = "folioRequest", required = false) String folioRequest,
+            @PathVariable String folioId
+    ) {
         return usuarioService.eliminarUsuario(folioId);
     }
 
