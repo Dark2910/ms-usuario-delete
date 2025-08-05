@@ -2,6 +2,10 @@ package com.eespindola.ms.delete.utils;
 
 public class ConstantesUtils {
 
+    private ConstantesUtils() {
+        throw new IllegalArgumentException("Util class");
+    }
+
     public static final String USUARIO_DELETE = "{CALL SP_UsuarioDelete(?,?)}";
 
     public static final String JDBC_DATA_SOURCE = "jdbcDataSource";
